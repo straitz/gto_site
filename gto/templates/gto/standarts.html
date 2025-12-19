@@ -1,0 +1,30 @@
+{% extends "gto/base.html" %}
+
+{% block content %}
+<h2 class="title">Нормативы ГТО</h2>
+
+<div class="table-wrapper">
+<table>
+    <thead>
+        <tr>
+            <th>Упражнение</th>
+            <th>Возраст</th>
+            <th>🥇 Золото</th>
+            <th>🥈 Серебро</th>
+            <th>🥉 Бронза</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in standards %}
+        <tr>
+            <td>{{ s.name }}</td>
+            <td>{{ s.age_group }}</td>
+            <td>{{ s.gold }}</td>
+            <td>{{ s.silver }}</td>
+            <td>{{ s.bronze }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

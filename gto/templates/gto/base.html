@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ГТО</title>
+    <link rel="stylesheet" href="{% static 'gto/css/style.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">ГТО</div>
+            <nav class="nav">
+                <a href="/">Главная</a>
+                <a href="/standards/">Нормативы</a>
+                <a href="/documents/">Документы</a>
+                <a href="/news/">Новости</a>
+                <a href="/partners/">Партнёры</a>
+                <a href="/signup/">Запись</a>
+            </nav>
+
+    </div>
+</header>
+
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="footer">
+    <p>© 2025 Комплекс ГТО</p>
+</footer>
+
+</body>
+</html>

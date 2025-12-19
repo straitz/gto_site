@@ -1,0 +1,17 @@
+{% extends "gto/base.html" %}
+{% block content %}
+<h2 class="title">Новости</h2>
+
+<div class="news-grid">
+{% for n in news %}
+    <div class="news-card">
+        {% if n.image %}
+        <img src="{{ n.image.url }}">
+        {% endif %}
+        <h3>{{ n.title }}</h3>
+        <p>{{ n.text|truncatechars:150 }}</p>
+        <span>{{ n.published_at }}</span>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

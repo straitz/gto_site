@@ -1,0 +1,13 @@
+{% extends "gto/base.html" %}
+{% block content %}
+<h2 class="title">Партнёры</h2>
+
+<div class="partners">
+{% for p in partners %}
+    <a href="{{ p.website }}" class="partner" target="_blank">
+        <img src="{{ p.logo.url }}" alt="{{ p.name }}">
+        <p>{{ p.name }}</p>
+    </a>
+{% endfor %}
+</div>
+{% endblock %}

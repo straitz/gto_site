@@ -1,0 +1,24 @@
+{% extends "gto/base.html" %}
+
+{% block content %}
+<h2 class="title">Запись на сдачу ГТО</h2>
+
+{% if success %}
+<div class="success">
+    <h3>Заявка отправлена</h3>
+    <p>{{ name }}, вы успешно записаны (возраст: {{ age }})</p>
+</div>
+{% else %}
+<form method="post" class="form">
+    {% csrf_token %}
+
+    <label>Имя</label>
+    <input type="text" name="name" required>
+
+    <label>Возраст</label>
+    <input type="number" name="age" required>
+
+    <button type="submit" class="btn">Отправить</button>
+</form>
+{% endif %}
+{% endblock %}

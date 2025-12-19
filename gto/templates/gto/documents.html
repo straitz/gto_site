@@ -1,0 +1,15 @@
+{% extends "gto/base.html" %}
+{% block content %}
+<h2 class="title">Документы</h2>
+
+<div class="docs">
+{% for d in docs %}
+    <div class="doc">
+        <h3>{{ d.title }}</h3>
+        <p>{{ d.description }}</p>
+        <span>{{ d.published_at }}</span><br>
+        <a href="{{ d.file.url }}" class="btn">Скачать</a>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
